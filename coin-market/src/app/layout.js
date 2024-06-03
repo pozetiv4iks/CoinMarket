@@ -9,6 +9,7 @@ export const metadata = {
   description: "Information about Coins",
 };
 
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">

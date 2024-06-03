@@ -1,0 +1,44 @@
+*{
+    padding: 0;
+    margin: 0;
+    color: black;
+}
+
+img{
+    width: 25px;
+    height: 25px;
+}
+
+button{
+    width: 50px;
+    height: 25px;;
+    background: black;
+    border-radius: 5px;
+    color: white;
+}
+
+th{
+    padding-left: 70px;
+}
+
+td{
+    padding-left: 70px;
+}
+
+input{
+    width: 250px;
+    height: 25px;
+    margin: 20px 10px 20px;
+}
+
+.header{
+    width: 100%;
+    background: rgb(169, 169, 204);
+    padding: 10px 10px 10px 10px;
+}
+
+.header button{
+    margin-top: 10px;
+    width: 100px;
+}
+

@@ -3,13 +3,9 @@ import React, { useState } from 'react';
 
 const Header = ({ cryptoPrices, portfolioValue, initialPortfolioValue }) => {
   const [modalOpen, setModalOpen] = useState(false);
-  const [userCoins, setUserCoins] = useState(['Bitcoin', 'Ethereum', 'Cardano']); // Пример списка монет пользователя
-
   const handleModalOpen = () => setModalOpen(true);
   const handleModalClose = () => setModalOpen(false);
-  const handleRemoveCoin = (coin) => {
-    setUserCoins(userCoins.filter(item => item !== coin));
-  };
+
 
   return (
     <div className="header">
@@ -21,20 +17,29 @@ const Header = ({ cryptoPrices, portfolioValue, initialPortfolioValue }) => {
         ))}
       </div>
       <div className="portfolio-info" onClick={handleModalOpen}>
-        <p>Portfolio Value: ${portfolioValue ? portfolioValue.toFixed(2) : 'Loading...'} 
+        <p>Portfolio Value: ${portfolioValue ? portfolioValue.toFixed(2) : '0.00'} 
           {portfolioValue && initialPortfolioValue ? (`${((portfolioValue - initialPortfolioValue) / initialPortfolioValue * 100).toFixed(2)}%`) : ''}
         </p>
       </div>
       {modalOpen && (
         <div className="modal">
-          <h2>User's Coin List</h2>
-          <ul>
-            {userCoins.map((coin, index) => (
-              <li key={index}>
-                {coin} <button onClick={() => handleRemoveCoin(coin)}>Remove</button>
-              </li>
-            ))}
-          </ul>
+          <table>
+        <thead>
+          <tr>
+            <th>Logo</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Market Cap</th>
+            <th>Change (24h)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tbody>
+        </table>
           <button onClick={handleModalClose}>Close Modal</button>
         </div>
       )}
