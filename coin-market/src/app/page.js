@@ -1,6 +1,9 @@
 "use client"
 
 import React, { useState, useEffect } from 'react';
+import { APIurl } from './utilits/const';
+import Link from "next/link";
+
 
 const CryptoTable = () => {
   const [cryptoData, setCryptoData] = useState([]);
@@ -11,7 +14,7 @@ const CryptoTable = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://api.coincap.io/v2/assets');
+        const response = await fetch(`${APIurl}/assets`);
         const data = await response.json();
         setCryptoData(data.data);
       } catch (error) {
@@ -53,10 +56,10 @@ const CryptoTable = () => {
         <tbody>
           {sortedCryptoData.map((crypto) => (
             <tr key={crypto.id}>
-              <td><img src={`https://assets.coincap.io/assets/icons/${crypto.id}@2x.png`} alt={crypto.symbol} /></td>
-              <td>{crypto.name}</td>
-              <td>${(+crypto.priceUsd).toFixed(2)}</td>
-              <td>${(+crypto.marketCapUsd).toLocaleString()}</td>
+              <td><img src={`https://assets.coincap.io/assets/icons/${crypto.symbol.toLowerCase()}@2x.png`} alt={crypto.symbol} /></td>
+              <td><Link href={`/${crypto.id}`}>{crypto.name}</Link></td>
+              <td>{(+crypto.priceUsd).toFixed(2)} USD</td>
+              <td>{(+crypto.marketCapUsd).toLocaleString()} USD</td>
               {crypto.changePercent24Hr < 0 ? (
                 <td style={{ color: 'red' }}>{(+crypto.changePercent24Hr).toFixed(2)}%</td>
               ) : (
