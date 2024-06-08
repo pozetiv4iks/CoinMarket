@@ -1,1 +1,1 @@
-# CoinMarket
+# Coin-Market
