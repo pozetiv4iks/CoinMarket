@@ -49,7 +49,7 @@ const CryptoTable = () => {
             <th>Logo</th>
             <th onClick={() => setSortBy('name')}>Name</th>
             <th onClick={() => setSortBy('priceUsd')}>Price</th>
-            <th onClick={() => setSortBy('marketCapUsd')}>Market Cap</th>
+            <th onClick={() => setSortBy('marketCapUsd')}>Market Caps</th>
             <th onClick={() => setSortBy('changePercent24Hr')}>Change (24h)</th>
           </tr>
         </thead>
