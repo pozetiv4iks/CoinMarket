@@ -47,8 +47,8 @@ const Header = ({ initialPortfolioValue }) => {
             <thead>
               <tr>
                 <th>Logo</th>
-                <th>Name</th>
-                <th>Price</th>
+                <th>Names</th>
+                <th>Prices</th>
                 <th>Market Cap</th>
                 <th>Change (24h)</th>
               </tr>
