@@ -1,0 +1,1 @@
+export const APIurl = 'https://api.coincap.io/v2';
